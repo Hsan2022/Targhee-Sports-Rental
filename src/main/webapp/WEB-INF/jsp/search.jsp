@@ -90,4 +90,30 @@
     </section>
 </c:if>
 
+<%--validation in js--%>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const forms = document.querySelectorAll('form[action="/cart/add"]');
+
+        forms.forEach(form => {
+            form.addEventListener('submit', function (event) {
+                const sizeSelected = form.querySelector('input[name="size"]:checked');
+                const deliverySelected = form.querySelector('input[name="pickup-delivery"]:checked');
+
+                if (!sizeSelected) {
+                    alert('Please select a size.');
+                    event.preventDefault(); // Prevents form submission
+                    return;
+                }
+
+                if (!deliverySelected) {
+                    alert('Please select a delivery option.');
+                    event.preventDefault(); // Prevents form submission
+                    return;
+                }
+            });
+        });
+    });
+</script>
+
 <jsp:include page="include/footer.jsp" />
