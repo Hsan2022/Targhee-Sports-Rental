@@ -20,6 +20,8 @@
     </div>
 </section>
 
+
+<%--search results settings--%>
 <%--these tags allow content to be rendered if prod list is not empty--%>
 <%--for now all images are the same--%>
 <%--user has deliver/size/special offers option--%>
@@ -77,7 +79,11 @@
                                             <p class="card-text font-weight-bold text-muted">${product.buyPrice}</p>
                                         </div>
                                         <div class="col-auto">
-                                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                            <td><a href="/?id=${product.id}">Edit</a></td>
+
+                                        <%--                                     <button type="submit" class="btn btn-primary">Add to Cart</button>--%>
+                                        <td><a href="/order/addToCart?id=${product.id}">Add To Cart</a></td>
+
                                         </div>
                                     </div>
                                 </div>
