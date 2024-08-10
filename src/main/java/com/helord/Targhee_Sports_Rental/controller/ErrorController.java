@@ -87,12 +87,11 @@ public class ErrorController {
         return response;
     }
 
-    // Convert stack trace frames into HTML-friendly format
+    // convert stack trace frames into HTML-friendly format
         // showing only frames related to this specific package
     private String getHTMLStackTrace(String[] stack) {
         StringBuffer result = new StringBuffer();
         for (String frame : stack) {
-            // Change this to be your package name
             if (frame.contains("com.helord.Targhee_Sports_Rental")) {
                 result.append(" &nbsp; &nbsp; &nbsp;" + frame.trim().substring(3) + "<br>\n");
             } else if (frame.contains("Caused by:")) {
