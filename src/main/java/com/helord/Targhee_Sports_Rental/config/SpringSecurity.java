@@ -53,14 +53,12 @@ public class SpringSecurity {
                 // 3) input field for password needs to be named "password"
                 .loginProcessingUrl("/account/loginProcessingURL"));
 
-
+        // config for logout
         http.logout(formLogout -> formLogout
-                .invalidateHttpSession(true)
-                // this is the URL that will log a user out
-                // this is another URL that is included with spring security - we do not have a controller method for this
-                .logoutUrl("/account/logout")
-                // after spring logs the user out then it will goto this URL
-                .logoutSuccessUrl("/"));
+                .invalidateHttpSession(true) // data does not persist after logout, kill session
+                .logoutUrl("/account/logout") // url for log out process
+                .logoutSuccessUrl("/") // url for after logout
+                .deleteCookies("JSESSIONID"));// ensure session information is not left behind in the user's browser
 
         return http.build();
     }

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TargheeSportsRentalApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(TargheeSportsRentalApplication.class, args);
 	}
 

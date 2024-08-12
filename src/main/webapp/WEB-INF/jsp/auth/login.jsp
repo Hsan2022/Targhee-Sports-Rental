@@ -11,10 +11,11 @@
     </div>
 </section>
 
-
+<%--display an error message if login fails--%>
 <section>
     <div class="container">
-        <c:if test="${param['error'] eq ''}">
+        <%--check for non-empty values--%>
+        <c:if test="${param.error != null}">
             <div class="row pt-5 justify-content-center">
                 <div class="col-6">
                     <div class="alert alert-danger" role="alert">Invalid Username or Password</div>
@@ -56,7 +57,7 @@
                             <label for="passwordId" class="col-form-label">Password</label>
                         </div>
                         <div class="col-4">
-                            <input type="text"
+                            <input type="password"
                                    id="passwordId"
                                    name="password"
                                    class="form-control <c:if test="${bindingResult.hasFieldErrors('password')}">is-invalid</c:if>"
