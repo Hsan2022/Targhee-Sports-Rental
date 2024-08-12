@@ -28,6 +28,9 @@ public class Order {
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<OrderDetail> orderDetails;
 
+    @Column(name = "user_id", insertable = false, updatable = false)
+    private int userId;
+
     @Column(name = "order_date")
     @Temporal(TemporalType.DATE)
     private Date orderDate;
