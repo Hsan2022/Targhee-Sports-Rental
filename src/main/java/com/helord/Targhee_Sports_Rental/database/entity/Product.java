@@ -44,6 +44,13 @@ public class Product {
     @Column(name = "image_url")
     private String imageUrl;
 
+    public Double getPrice() {
+        return buyPrice;
+    }
+
+    public void setPrice(Double price) {
+        this.buyPrice = price;
+    }
 
 
 }
