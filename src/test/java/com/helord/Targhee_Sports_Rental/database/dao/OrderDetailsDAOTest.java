@@ -41,7 +41,6 @@ public class OrderDetailsDAOTest {
             Integer quantityOrdered = orderDetail.getQuantityOrdered();
             Double priceEach = orderDetail.getPriceEach();
             Integer orderLineNumber = orderDetail.getOrderLineNumber();
-            Double total = orderDetail.getTotal();
 
             // Assertions
             assertNotNull(orderId, "Order ID should not be null");
@@ -59,8 +58,6 @@ public class OrderDetailsDAOTest {
             assertNotNull(orderLineNumber, "Order line number should not be null");
             assertTrue(orderLineNumber >= 0, "Order line number should be non-negative");
 
-            assertNotNull(total, "Total should not be null");
-            assertTrue(total >= 0, "Total should be non-negative");
         }
     }
 }

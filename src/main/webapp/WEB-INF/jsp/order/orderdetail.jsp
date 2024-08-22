@@ -70,7 +70,7 @@
                                 <td>${detail.total}</td>
                                 <td>
                                     <!-- Button to delete product from order -->
-                                    <form action="<c:url value='/order/deleteProduct' />" method="post" style="display: inline;">
+                                    <form action="<c:url value='/order/deleteProduct'/>" method="post" style="display: inline;">
 
                                         <input type="hidden" name="productId" value="${detail.product_id}" />
                                         <input type="hidden" name="orderId" value="${detail.order_id}" />

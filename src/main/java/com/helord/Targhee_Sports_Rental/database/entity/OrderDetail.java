@@ -31,9 +31,6 @@ public class OrderDetail {
     @Column(name = "order_line_number", columnDefinition = "SMALLINT")
     private Integer orderLineNumber;
 
-    @Column(name = "total", columnDefinition = "DECIMAL")
-    private Double total;
-
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "product_id", nullable = false)
