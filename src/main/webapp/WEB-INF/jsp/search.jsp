@@ -2,30 +2,34 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="include/header.jsp" />
 
-<!-- Search form for searching products -->
+<!-- Search form setting -->
 <section>
     <div class="container">
         <div class="row justify-content-center pt-5 pb-3">
             <div class="col-md-8 text-center">
-                <form action="/search" method="GET">
+                <!-- Image link above search form -->
+                <div id="promoImage" class="pt-4" style="margin-bottom: 10px;">
+                    <img src="https://mountainsupplybend.com/uploads/3/4/4/6/34463170/ski-snow-brands_orig.png" alt="gear brands" class="img-fluid"/>
+                </div>
+                <form id="searchForm" action="/search" method="GET">
                     <div class="mb-3">
-                        <label for="search" class="form-label"><h4>Product Name Search</h4></label>
-                        <input type="text" value="${search}" class="form-control" id="search" name="search" placeholder="Enter search term"/>
+                        <input type="text" value="${search}" class="form-control" id="search" name="search" placeholder="Check out our best deals! Search here."
+                               style="height: 70px; font-size: 22px; padding: 0 15px; box-sizing: border-box;"/>
                     </div>
-                    <button type="submit" class="btn btn-info">Search</button>
+                    <button type="submit" class="btn btn-info" style="height: 50px; font-size: 22px; padding: 0 40px; margin-bottom: 10px;">Search</button>
                 </form>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Search results settings -->
+<!-- Search form results settings -->
 <c:if test="${not empty products}">
     <section id="searchResults">
         <div class="container">
             <div class="row pt-5">
                 <div class="col-12">
-                    <h2 class="text-center">There are (${products.size()}) search results for ${search}</h2>
+                    <h2 class="text-center">Scroll down to see (${products.size()}) results for ${search}</h2>
                 </div>
             </div>
             <div class="row pt-3">
@@ -40,9 +44,9 @@
                             <div class="card-footer">
                                 <p class="card-text font-weight-bold text-muted">${product.buyPrice}</p>
                                 <div class="row">
-                                    <div class="col-auto">
-                                        <a href="/?id=${product.id}">Edit</a>
-                                    </div>
+<%--                                    <div class="col-auto">--%>
+<%--                                        <a href="/?id=${product.id}">Edit</a>--%>
+<%--                                    </div>--%>
                                     <div class="col-auto">
                                         <a href="/order/addToCart?productId=${product.id}">Add To Cart</a>
                                     </div>
@@ -56,4 +60,18 @@
     </section>
 </c:if>
 
+
 <jsp:include page="include/footer.jsp" />
+
+
+<!-- JavaScript to hide image when search is submitted -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('searchForm').addEventListener('submit', function() {
+            console.log('Form submitted');
+            document.getElementById('promoImage').style.display = 'none';
+        });
+    });
+</script>
+

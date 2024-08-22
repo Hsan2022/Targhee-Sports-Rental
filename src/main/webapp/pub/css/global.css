@@ -1,27 +1,299 @@
+/* Global Styles */
 html, body {
+    height: 100%;
+    overflow: auto; /* Prevent scrolling */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: url('../images/mountain.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url('../../pub/images/mountain.jpeg');
+    background-size: cover; /* Cover the entire viewport */
     background-position: center;
+    background-attachment: fixed; /* Fix the image in place while scrolling */
+    background-repeat: no-repeat;
 }
 
-:root{
+:root {
     --color-primary: #1743e3;
     --color-white: #eaeaea;
     --color-dark: #333;
+    --color-light: #ADD8E6;
     --color-black: #222;
-    --color-light-blue: #8fd5ff;
-    --color-orange: orangered;
+}
+
+/* Navbar Logo Styling */
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+    padding-right: 20px;
+}
+
+.logo-img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover; /* Prevents distortion */
+    transition: transform 0.3s ease; /* Optional: smooth scale transition on hover */
+    align-items: flex-end;
+}
+
+.logo-img:hover {
+    transform: scale(1.1); /* Optional: slightly enlarge logo on hover */
+}
+
+/* Increase font size for nav-link */
+.nav-link {
+    font-size: 2.0rem; /* Adjust the size as needed */
+    margin-right: 15px;
+}
+/* Header Section */
+
+/*OK*/
+header {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0;
+}
+
+/*OK*/
+.header-left {
+    max-width: 620px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/*OK*/
+.header-left h1 {
+    font-size: 64px;
+    font-weight: bold;
+    margin-top: 55px;
+    margin-bottom: 45px;
+    line-height: 1.2;
+    color: orangered;
+    animation: H1Ani 1s ease forwards;
+    opacity: 0;
+    animation-delay: 1s;
+}
+
+/*OK*/
+.header-left h3 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 55px;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    animation: H1Ani 1s ease forwards;
+    opacity: 0;
+    animation-delay: .8s;
+}
+
+/*OK*/
+.header-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/*OK*/
+.header-right {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    transform: rotate(45deg);
+    right: -7%;
+}
+
+/*OK*/
+.sq-box {
+    height: 100%;
+    width: 100%;
+    border: 25px solid var(--color-light);
+    background: var(--color-white);
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: zoomOut 1s ease forwards;
+    animation-delay: 1.3s;
+    position: absolute; /* Ensure absolute positioning */
+    bottom: 0; /* Align to bottom if needed */
+}
+
+/*OK*/
+.sq-box img {
+    position: absolute;
+    transform: rotate(-45deg);
+    max-width: 700px;
+    top: 430px;
+    left: -180px;
+    opacity: 0;
+    animation: skiAni 1s ease forwards;
+    animation-delay: 1.6s;
+}
+/*OK*/
+.sq-box2 {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: var(--color-light);
+    transform: rotate(45deg);
+    top: -26%;
+    right: -26%;
+    z-index: -1;
+    opacity: 0;
+    animation: sqbox2Ani 1s ease forwards;
+    animation-delay: .3s;
+}
+
+/* Forms Section w/flexbox */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+    padding-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-light);
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Center horizontally */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.form-control {
+    color: var(--color-dark);
+}
+/*login*/
+
+/* Flexbox container for login form and image */
+.loginForm-image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 80vh;
+    padding: 0;
+    margin-top: 80px;
+    margin-bottom: 120px;
+    margin-left: 80px;
+}
+
+/* Form container styling */
+.loginForm-container {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 80px;
+    margin-bottom: 120px;
+    margin-right: 80px;
+
+    order: 2;
+}
+
+/* Image container styling */
+.image-container {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 1;
+    margin-top: 80px;
+    margin-bottom: 120px;
+    margin-left: 80px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .loginForm-image-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .loginForm-container, .image-container {
+        flex: none;
+        width: 100%;
+    }
+
+    .image-container img {
+        height: auto;
+        max-height: 300px;
+    }
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
+
+.is-valid {
+    border-color: #198754;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #003366;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+
+}
+
+.btn-primary:hover {
+    background-color: #002244;
 }
 
 
+header .btnIndex {
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 28px;
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: var(--color-white);
+    letter-spacing: .4px;
+    font-weight: 600;
+    transition: .4s ease;
+    opacity: 0;
+    animation: btnAni 1s ease forwards;
+    animation-delay: 1.3s;
+}
 
+.btnIndex:hover {
+    background-color: #0056b3;
+    color: var(--color-primary);
+}
+
+/* Footer Section */
 .footer-bg-color {
     background-color: orangered;
     padding-top: 5px;
@@ -34,150 +306,20 @@ html, body {
     height: 1%;
 }
 
-
-.btn {
-    display: inline-block;
-    width: fit-content;
-    padding: 12px 28px;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    letter-spacing: .4px;
-    font-weight: 600;
-    transition: .4s ease;
-    opacity: 0;
-    animation: btnAni 1s ease forwards;
-    animation-delay: 1.3s;
-}
-
-.btn:hover {
-    background: transparent;
-    color: var(--color-primary);
-}
+/* Miscellaneous */
 .container {
     max-width: 1620px;
     width: 90%;
     margin: 0 auto;
 }
 
-
-/* .......................Start Header Section...................... */
-header{
-    width: 100;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.header-left{
-    max-width: 620px;
-    position: relative;
-}
-.header-left h1{
-    font-size: 54px;
-    line-height: 1.2;
-    font-weight: 800;
-    color: var(--color-white);
-    animation: H1Ani forwards 1s ease;
-    opacity: 0;
-    animation-delay: 1s;
-}
-.header-left h3{
-    font-size: 40px;
-    font-weight: 600;
-    color: var(--color-white);
-    margin-top: .5rem;
-    animation: H1Ani forwards 1s ease;
-    opacity: 0;
-    animation-delay: .8s;
-}
-.header-left p{
-    margin: 15px 0 30px;
-    line-height: 150%;
-    font-size: 16px;
-    animation: logoAni forwards 1s ease;
-    opacity: 0;
-    animation-delay: .6s;
-}
-.header-container{
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    height: 100%;
-    justify-content: space-between;
-}
-.header-right{
-    position: relative;
-    width: 450px;
-    height: 450px;
-    transform: rotate(45deg);
-    right: -7%;
-}
-.sq-box{
-    height: 100%;
+.card-img-top {
     width: 100%;
-    border: 25px solid var(--color-light-blue);
-    background: var(--color-white);
-    box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.2) ;
-    opacity: 0;
-    animation: zoomOut 1s ease forwards;
-    animation-delay: 1.3s;
-}
-.sq-box img{
-    position: absolute;
-    transform: rotate(-45deg);
-    max-width: 700px;
-    top: 130px;
-    left: -180px;
-    opacity: 0;
-    animation: skiAni forwards 1s ease;
-    animation-delay: 1.6s;
-}
-.sq-box2{
-    position: absolute;
-    width: 700px;
-    height: 700px;
-    background: var(--color-primary);
-    transform: rotate(45deg);
-    top: -26%;
-    right: -26%;
-    z-index: -1;
-    opacity: 0;
-    animation: sqbox2Ani forwards 1s ease;
-    animation-delay: .3s;
-}
-/* .......................End Header Section...................... */
-/* .......................Start forms Section...................... */
-/* product search form */
-form {
-    /*height: 100vh; !* Full viewport height *!*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    max-width: 500px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.1); /* opacity param last */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 200px;
+    object-fit: contain;
 }
 
-#searchResults {
-    /*max-width: 500px; !* Adjust width as needed *!*/
-    /*width: 100%;*/
-    background-color: var(--color-white);
-    /*background-color: rgba(255, 255, 255, 0.1); !* opacity param last *!*/
-    /*color: var(--color-white);*/
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* .......................End forms Section...................... */
-
-/* .......................Start Animation Section ...................... */
+/* Animation Section */
 @keyframes btnAni {
     0% {
         transform: translateY(20px);
@@ -189,78 +331,57 @@ form {
     }
 }
 
-
 @keyframes logoAni {
-    0%{
+    0% {
         transform: translateX(-100px);
         opacity: 0;
     }
-    100%{
+    100% {
         transform: translateX(0);
         opacity: 1;
     }
 }
-@keyframes NavliaAni {
-    0%{
-        transform: translateY(100px);
+
+@keyframes H1Ani {
+    0% {
+        transform: translateY(-100px);
         opacity: 0;
     }
-    100%{
+    100% {
         transform: translateY(0);
         opacity: 1;
     }
 }
-@keyframes socialAni {
-    0%{
-        transform: translateX(100px) rotate(45deg);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0) rotate(45deg);
-        opacity: 1;
-    }
-}
-@keyframes H1Ani {
-    0%{
-        transform: translateY(-100px) ;
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0) ;
-        opacity: 1;
-    }
-}
-@keyframes zoomOut {
-    0%{
-        transform:scale(1.1) ;
-        opacity: 0;
-    }
-    100%{
-        transform: scale(1) ;
-        opacity: 1;
-    }
-}
 
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 @keyframes skiAni {
-    0%{
+    0% {
         transform: translate(180px, -300px) scale(0) rotate(-45deg);
         opacity: 0;
     }
-    100%{
+    100% {
         transform: translate(0, 0) scale(1) rotate(-45deg);
         opacity: 1;
     }
 }
+
 @keyframes sqbox2Ani {
-    0%{
+    0% {
         right: -40%;
         opacity: 0;
     }
-    100%{
+    100% {
         right: -26%;
         opacity: 1;
     }
 }
-
-/* .......................End Animation Section...................... */
