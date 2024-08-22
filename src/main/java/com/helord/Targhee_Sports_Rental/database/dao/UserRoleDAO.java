@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.*;
 
 import java.util.*;
 
-public interface UserRoleDAO extends JpaRepository<UserRole, Long> {
+public interface UserRoleDAO extends JpaRepository<UserRole, Integer> {
 
     // used for granted authority query
     List<UserRole> findByUserId(Integer userId);

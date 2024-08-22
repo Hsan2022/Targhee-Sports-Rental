@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 public class CreateAccountFormBean {
 
-    //
+
     // these fields go in create jsp file
     @NotEmpty
     private String email;

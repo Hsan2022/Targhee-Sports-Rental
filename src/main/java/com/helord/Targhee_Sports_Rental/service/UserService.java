@@ -36,15 +36,21 @@ public class UserService {
         // take plain text password from form and encrypt it
         String encryptedPassword = passwordEncoder.encode(form.getPassword());
         user.setPassword(encryptedPassword);
+        user.setFirstname(form.getFirstname());
+        user.setLastname(form.getLastname());
+        user.setAddress(form.getAddress());
 
         user.setDateCreated(new Date());
+
         userDao.save(user); // save user to the db
 
         UserRole userRole = new UserRole(); // create a user role for the user
         userRole.setRoleName("USER");
         userRole.setUserId(user.getId());
+        userRole.setDateCreated(new Date());
 
         userRoleDao.save(userRole); // save user role to the db
+        log.debug("User role assigned: " + userRole);
 
         return user;
     }

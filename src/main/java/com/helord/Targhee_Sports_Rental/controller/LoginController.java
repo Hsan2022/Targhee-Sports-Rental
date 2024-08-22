@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.*;
 
@@ -58,7 +59,7 @@ public class LoginController {
 
     // handle requests to this create account 'form submission' path
     @PostMapping("/create-account")
-    public ModelAndView createAccountSubmit(@Valid CreateAccountFormBean form, BindingResult bindingResult, HttpSession session) {
+    public ModelAndView createAccountSubmit(@Valid CreateAccountFormBean form, BindingResult bindingResult, HttpSession session, RedirectAttributes redirectAttributes) {
 
         // create obj to carry view/jsp
         ModelAndView response = new ModelAndView("auth/create-account");
@@ -79,9 +80,14 @@ public class LoginController {
 
             // handle user auth manually, logging user with these params
             authenticatedUserUtilities.manualAuthentication(session, form.getEmail(), form.getPassword());
-        }
 
+
+            // Add a welcome message to flash attributes
+            redirectAttributes.addFlashAttribute("welcomeMessage", "Welcome, " + form.getFirstname() + "! Your account has been created successfully.");
+
+            // Redirect to the home page
+            response.setViewName("redirect:/index"); // Replace with your actual home page URL
+        }
         return response;
     }
-
 }

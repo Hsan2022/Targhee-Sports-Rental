@@ -32,9 +32,32 @@ public class IndexController {
         // query a list of products from db matching the search parameter
         List<Product> products = productDao.findByNameOrCode(search);
         // add list result to the model
+
+        log.debug("=================================== stream ===============================");
+
+
+        // stream with lambda function
+        products.stream().forEach(product -> {
+            log.debug("Product: " + product.getProductName());
+        });
+
+
+
         response.addObject("products", products);
 
         // return ModelAndView
         return response;
     }
+
+    // this function is for the blog page of the website
+    @GetMapping("/blog")
+    public ModelAndView index(@RequestParam(required = false) Integer id) throws Exception {
+        ModelAndView response = new ModelAndView("blog");
+
+        //throw new Exception("This is a test exception"); for error controller exp
+
+
+        return response;
+    }
+
 }

@@ -6,7 +6,7 @@
             <h1>Best Gear in Town!</h1>
             <h3>Get everything you need for an EPIC powder day!</h3>
             <a href="search">
-                <button class="btn btn-info" type="button">Search our inventory!</button>
+                <button class="btn btn-info btnIndex" type="button">Search our inventory!</button>
             </a>
         </div>
         <div class="header-right">

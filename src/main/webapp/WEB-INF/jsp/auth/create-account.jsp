@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row pt-5 ">
             <div class="col-12">
-                <form action="/account/create-account" method="post">
+                <form action="../account/create-account" method="post">
 
                     <!-- email input -->
                     <div class="row align-items-center justify-content-center">
@@ -146,7 +146,13 @@
                             </div>
                         </div>
                     </c:if>
-
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-8 pt-3">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                        <label class="form-check-label" for="form2Example33">
+                            Subscribe to our newsletter
+                        </label>
+                    </div>
 
                 <%-- submit button--%>
                     <div class="row justify-content-center pt-3 ">
