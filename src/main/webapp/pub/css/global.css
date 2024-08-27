@@ -112,7 +112,6 @@ header {
     right: -7%;
 }
 
-/*OK*/
 .sq-box {
     height: 100%;
     width: 100%;
@@ -182,6 +181,7 @@ header {
 /*login*/
 
 /* Flexbox container for login form and image */
+.createAccount-image-container,
 .loginForm-image-container {
     display: flex;
     justify-content: space-between;
@@ -194,6 +194,7 @@ header {
 }
 
 /* Form container styling */
+.createAccount-container,
 .loginForm-container {
     flex: 1;
     padding: 20px;
@@ -207,7 +208,6 @@ header {
     margin-top: 80px;
     margin-bottom: 120px;
     margin-right: 80px;
-
     order: 2;
 }
 

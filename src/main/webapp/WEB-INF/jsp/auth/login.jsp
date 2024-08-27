@@ -11,7 +11,7 @@
             <div class="alert alert-danger" role="alert">Invalid Username or Password</div>
         </c:if>
 
-        <div style="background-color: rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+        <div style="background-color: rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: left;">
             <p style="font-size: 36px; color: #000000; margin: 0; font-weight: bold">Welcome back!</p>
         </div>
 

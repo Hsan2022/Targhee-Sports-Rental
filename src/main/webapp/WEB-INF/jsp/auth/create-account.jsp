@@ -2,18 +2,13 @@
 
 <jsp:include page="../include/header.jsp" />
 
-<!-- a page header -->
-<section style="background-color:gray">
-    <div class="container">
-        <div class="row pt-5 pb-5">
-            <h1 class="text-center">Create Account</h1>
+<section class="container">
+    <div class="createAccount-image-container">
+
+    <div class="createAccount-container">
+        <div style="background-color: rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+            <p style="font-size: 36px; color: #000000; margin: 0; font-weight: bold">Create an account</p>
         </div>
-    </div>
-</section>
-
-
-<section>
-    <div class="container">
         <div class="row pt-5 ">
             <div class="col-12">
                 <form action="../account/create-account" method="post">
@@ -163,6 +158,11 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div class="image-container">
+        <img src="../../../pub/images/skier2.jpg" alt="skier holding skis">
+    </div>
+    </div>
     </div>
 </section>
 

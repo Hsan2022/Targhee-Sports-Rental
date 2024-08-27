@@ -1,8 +1,10 @@
 <jsp:include page="../include/header.jsp" />
 
+<section style="background-color: #f8d7da; padding: 20px; text-align: center; border: 1px solid #f5c6cb; border-radius: 5px;">
 
-<img src="/src/main/webapp/pub/images/error.png" alt="404 Error Image" />
+    <h1 class="page-title" style="color: #721c24; font-family: Arial, sans-serif; font-size: 24px; margin: 0;">This is a 404 page not found error</h1>
 
-<h1 class="page-title">This is a 404 page not found error</h1>
+</section>
+
 
 <jsp:include page="../include/footer.jsp" />
